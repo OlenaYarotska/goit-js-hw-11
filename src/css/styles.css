@@ -40,12 +40,8 @@ img {
   height: auto;
 }
 
-.section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
 /* search form */
+
 .search-form__input {
   width: 300px;
   height: 40px;
@@ -82,11 +78,12 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80px;
+  width: 100px;
   height: 30px;
   border: none;
   border-radius: 4px;
   background-color: #75bdb7;
+  color: #212121;
 }
 .load-more.is-hidden {
   opacity: 0;

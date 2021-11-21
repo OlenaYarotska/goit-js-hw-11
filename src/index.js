@@ -28,7 +28,7 @@ loadMore.classList.add('is-hidden');
 function onSubmit(event) {
   event.preventDefault();
   userRequest = event.currentTarget.elements.searchQuery.value.trim();
-  loadMore.classList.add('.is-hidden');
+  loadMore.classList.add('is-hidden');
   gallery.innerHTML = '';
   page = 1;
 
@@ -41,14 +41,14 @@ function onSubmit(event) {
     totalHits = res.data.totalHits;
 
     if (responseGallery.length === 0) {
-      loadMore.classList.add('.is-hidden');
+      loadMore.classList.add('is-hidden');
       return Notify.failure('Sorry, there are no images matching your search query. Please try again.');
       
     }
     
       Notify.success(`Hooray! We found ${totalHits} images.`);
       markup(res);
-      loadMore.classList.remove('.is-hidden');
+      loadMore.classList.remove('is-hidden');
       endOfGallery(page, totalHits);
       
       page += 1;
@@ -97,7 +97,7 @@ function markup(images) {
 
 function endOfGallery(page, totalHits) {
   if (page * 40 >= totalHits) {
-    loadMore.classList.add('.is-hidden');
+    loadMore.classList.add('is-hidden');
     Notify.success("We're sorry, but you've reached the end of search results.");
   }
 }
