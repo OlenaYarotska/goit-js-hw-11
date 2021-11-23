@@ -71,7 +71,7 @@ img {
 .search-btn:hover {
   background-color: #44837e;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
+  transition-duration: 250ms;
 }
 
 .load-more {
@@ -84,6 +84,12 @@ img {
   border-radius: 4px;
   background-color: #75bdb7;
   color: #212121;
+}
+.load-more:hover {
+  background-color: #4da19a;
+  text-decoration: underline;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 .load-more.is-hidden {
   opacity: 0;

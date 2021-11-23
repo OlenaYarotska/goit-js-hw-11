@@ -1,7 +1,6 @@
 import './css/styles.css';
 import { Notify } from 'notiflix';
-import SimpleLightbox from "simplelightbox";
-import 'simplelightbox/dist/simple-lightbox.min.css';
+
 import { apiSearch } from './js/apiSearch';
 import { markup } from './js/markup';
 
@@ -49,7 +48,6 @@ function onSubmit(event) {
   apiSearch(userRequest , page).then(res => {
     const responseGallery = res.data.hits;
     totalHits = res.data.totalHits;
-  
 
     if (responseGallery.length === 0) {
        hideBtn();
@@ -61,15 +59,8 @@ function onSubmit(event) {
       refs.loadMore.classList.remove('is-hidden');
       endOfGallery(page, totalHits);
     incrementPage();
-    });  
+    });     
 };
-
-  let lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-    captionPosition: 'bottom',
-  });
-lightbox.refresh();
   
 function endOfGallery(page, totalHits) {
   if (page * 40 >= totalHits) {

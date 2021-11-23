@@ -1,4 +1,6 @@
 import { refs } from '../index';
+import SimpleLightbox from "simplelightbox";
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function markup(images) {
   const gallerySearch = images.data.hits;
@@ -23,6 +25,12 @@ export function markup(images) {
   ).join('');
 
   refs.gallery.insertAdjacentHTML('beforeend', galleryMarkup);
+  let lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    captionPosition: 'bottom',
+  });
+lightbox.refresh();
 
   const { height: cardHeight } = document.querySelector('.gallery').firstElementChild.getBoundingClientRect();
 
